@@ -9,7 +9,9 @@ mongoose.Promise = global.Promise
 mongoose.connect('mongodb://localhost/vididea-dev')
   .then(() => console.log('MongoDB connected!!'))
   .catch(err => console.log(err))
-
+// Load Idea Model
+require('./models/Idea')
+const Idea = mongoose.model('ideas')
 // Handlebars middlewar
 
 app.engine('handlebars', exphbs(
