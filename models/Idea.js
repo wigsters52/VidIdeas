@@ -12,12 +12,14 @@ const IdeaSchema = new Schema({
     type: String,
     required: true
   },
-
+  user: {
+    type: String,
+    required: true
+  },
   data: {
     type: Date,
     default: Date.now
   }
-
 })
 
 mongoose.model('ideas', IdeaSchema)
