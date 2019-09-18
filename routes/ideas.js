@@ -60,7 +60,8 @@ router.post('/', ensureAuthenticated, (req, res) => {
   } else {
     const newUser = {
       title: req.body.title,
-      details: req.body.details
+      details: req.body.details,
+      date: null
     }
     new Idea(newUser).save().then(idea => {
       req.flash('success_msg', 'Video idea added')
